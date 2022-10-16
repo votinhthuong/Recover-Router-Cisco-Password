@@ -1,35 +1,36 @@
-*Các bước khôi phục mật khẩu cho router*
+**Các bước khôi phục mật khẩu cho router**
 
 **Step 1: Tắt/mở router**
 
 **Step 2: Nhấn Ctrl + Break để vào mode rommon**
 
 **Step 3: Đổi giá trị thanh ghi cấu hình**
-rommon 1 > confreg 0x2142
 
-rommon 2 > reset
+*rommon 1 > confreg 0x2142*
 
-** Step 4: Sửa password**
+*rommon 2 > reset*
 
-Router# copy startup-config running-config
+**Step 4: Sửa password**
 
-Router# conf t
+*Router# copy startup-config running-config*
 
-Router(config)# enable password <mật_khẩu>
+*Router# conf t*
 
-Router(config)# end
+*Router(config)# enable password <mật_khẩu>*
 
-Router# wr
+*Router(config)# end*
+
+*Router# wr*
 
 **Step 5: Đổi lại giá trị thanh ghi cấu hình**
 
-Router(config)# config-register 0x2102
+*Router(config)# config-register 0x2102*
 
-Router(config)# end
+*Router(config)# end*
 
-Router# end
+*Router# wr*
 
-Router# reload
+*Router# reload*
 
 
 
